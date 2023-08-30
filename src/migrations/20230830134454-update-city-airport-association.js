@@ -17,8 +17,8 @@ module.exports = {
         table: "Cities",
         field: "id",
       },
-      onUpdate: "CASCADE",
-      onDELETE: "CASCADE",
+
+      onDelete: "CASCADE",
     });
   },
 
@@ -32,4 +32,3 @@ module.exports = {
     await queryInterface.removeConstraint("Airports", "city_fkey_constraint");
   },
 };
-//Added new migration that can add a constraint in a column of Airport
