@@ -19,6 +19,18 @@ async function createCity(req, res) {
     return res.status(error.statusCode).json(ErrorResponse);
   }
 }
+
+async function getCities(req, res) {
+  try {
+    const cities = await CityService.getCities();
+    SuccessResponse.data = cities;
+    return res.status(StatusCodes.OK).json(SuccessResponse);
+  } catch (error) {
+    ErrorResponse.error = error;
+    return res.status(error.statusCode).json(ErrorResponse);
+  }
+}
+
 /**
  * DELETE : /cities/:id
  * req-body {}
@@ -37,4 +49,5 @@ async function destroyCity(req, res) {
 module.exports = {
   createCity,
   destroyCity,
+  getCities,
 };
