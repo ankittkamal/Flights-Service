@@ -57,6 +57,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
       },
       totalSeats: {
+        //total reman ing seats
         type: DataTypes.INTEGER,
         allowNull: false,
       },
